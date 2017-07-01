@@ -1,22 +1,22 @@
 # djangoecommerce
 Loja virtual - Projeto de didático
 
-Instalação
+# Instalação
 
-#Clone o projeto
+# Clone o Projeto
 
 git clone https://github.com/almeidaluan/pizzavip.git
 cd ecommercedjango
 
-#virtualenv
+# virtualenv
 
 virtualenv env -p python3
 
-#Linux
+# Linux
 
 source env/bin/activate
 
-#Windows
+# Windows
 
 env\Scripts\activate.bat
 Instale as dependencias
