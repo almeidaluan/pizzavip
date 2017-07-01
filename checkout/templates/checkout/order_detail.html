@@ -1,0 +1,67 @@
+{% extends 'accounts/index.html' %}
+
+
+{% block container%}
+<section class="container">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <span class="hi_user">Olá, <strong>{{user}}</strong></span>
+        <div class="div_menu">
+          <a href="{% url 'accounts:index' %}">
+            <div class="menu_lateral ativo">
+             Início
+            </div>
+          </a>
+          <a href="{% url 'accounts:UpdateUser' %}">
+            <div class="menu_lateral">
+              Conta
+            </div>
+          </a>
+          <a href="{% url 'checkout:order_list'%}">
+            <div class="menu_lateral">
+              Pedidos
+            </div>
+          </a>
+         
+          <a href="{%url 'accounts:UpdatePassword'%}">
+            <div class="menu_lateral">
+              Alterar Senha
+            </div>
+          </a>
+          <a href="{% url 'logout' %}">
+            <div class="menu_lateral">
+             Sair
+            </div>
+          </a>
+        </div>
+      </div>
+    {% block accounts_container %}
+    <div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+        <h2>Pedido #{{order.pk}}</h2>
+        <dl class="dl-horizontal">
+            <dt>Total R$</dt>
+            <dd>{{object.total | floatformat:"2"}}</dd>
+            <dt>Situação</dt>
+            <dd>{{object.get_status_display}}</dd>
+            <dt>Data</dt>
+            <dd>{{object.created | date:"d/m/Y H:i" }}</dd>
+            <dt>Meio de Pagamento</dt>
+            <dd>{{object.get_payment_option_display}}</dd>
+
+        </dl>
+        <h3>Itens do Pedido</h3>
+        {% for item in object.itens.all%}
+        <dl class="dl-horizontal">
+            <dt>Produto</dt>
+            <dd>{{item.product}}</dd>
+            <dt>Quantidade</dt>
+            <dd>{{item.quantity}}</dd>
+            <dt>Preço</dt>
+            <dd>R${{item.price | floatformat:"2"}}</dd>
+        </dl>
+
+        {% endfor %}
+
+        </div>
+    {% endblock %}
+</section>
+{% endblock%}

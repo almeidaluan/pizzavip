@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+
+          	<link href="{%static 'assets/css/bootstrap.css'%}" rel="stylesheet">
+	<link href="{%static 'assets/css/main.css' %}" rel="stylesheet">
+	<link href="{%static 'assets/css/dashboard/dashboard_main.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/css/dashboard/css_icons/fontello.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+
+
+
+
+    </head>
+    <body>
+    <div class="first-nav">
+        <div class="container">
+          <div id="navbar" class="navbar-collapse collapse margin-top-menos-8px">
+            <ul class="nav navbar-nav navbar-left icons-sociais">
+              <li><a class="icon-social-facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a class="icon-social-twitter" href="#contact"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a class="icon-social-instagram" href="#about"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+      <!-- Second Nav -->
+  	<nav class="navbar navbar-default navbar-static-top second-nav">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="{% url 'util:index' %}" class="navbar-brand margin-top-10px" ><img class="logo" src="{% static 'assets/img/logo2.png'%}"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse margin-top-10px">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+            {% if user.is_authenticated %}
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <p class="open-sans id_user"><span class="user fa fa-user-o" aria-hidden="true"></span> Olá,{{user}}
+                 <span class="caret"></span>
+                </p>
+              </a>
+                <ul id="login-dp" class="dropdown-menu">
+                  <li>
+                    <div class="row">
+                    <div class="col-md-12">
+                      <a href="{% url 'accounts:index'%}" class="open-sans dropdown-itens">Início</a>
+                      <hr class="hr-cadastro">
+                      <a href="{%url 'accounts:alterardados' %}" class="open-sans dropdown-itens">Minha Conta</a>
+                      <hr class="hr-cadastro">
+                      <a href="{%url 'checkout:order_list'%}" class="open-sans dropdown-itens">Meus Pedidos</a>
+                     
+                      <hr class="hr-cadastro">
+                      <a href="{% url 'logout' %}" class="open-sans dropdown-itens">Sair</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              	{%else%}
+              <a href="{% url 'login' %}"><p class="open-sans possui_conta">login</p></a>
+			{% endif %}
+            </li>
+          </ul>
+
+  		  	<ul class="nav navbar-nav navbar-right" style="margin-top: -4px;">
+            <li>
+              <a href="{% url 'checkout:cart_item' %}">
+                <i class="cart fa fa-shopping-cart" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <div class="container">
+        <div class="menu">
+          {% for category in categories%}
+				<a class="open-sans" href="{{category.get_absolute_url}}">{{category}}</a><span class="open-sans"> | </span>
+
+				{% endfor%}
+        </div>
+      </div>
+    </nav>
+
+    {%block container%}
+
+    {%endblock%}
+
+     <footer class="footer footer-dashboard">
+      <p class="redes-sociais border-bot">SIGA PIZZA VIP
+         <a href="#" class="fa fa-facebook icons-redes-sociais" aria-hidden="true"></a>
+         <a href="#" class="fa fa-twitter icons-redes-sociais" aria-hidden="true"></a>
+         <a href="#" class="fa fa-instagram icons-redes-sociais" aria-hidden="true"></a>
+         <a href="#" class="fa fa-youtube icons-redes-sociais" aria-hidden="true"></a>
+       </p>
+      <p class="copyright">COPYRIGHT PIZZA VIP © 2017</p>
+    </footer>
+  <script src="{%static 'assets/js/jquery-1.11.3.min.js'%}"></script>
+	    <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+    </body>
+</html>

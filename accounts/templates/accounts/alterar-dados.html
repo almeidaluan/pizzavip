@@ -1,0 +1,75 @@
+{% extends 'accounts/basedashboard.html'%}
+
+{% block container%}
+
+
+<!-- Menu Lateral -->
+    <section class="container">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <span class="hi_user">Olá, <strong>{{user}}</strong></span>
+        <div class="div_menu">
+          <a href="{% url 'accounts:index' %}">
+            <div class="menu_lateral ativo">
+             Início
+            </div>
+          </a>
+          <a href="{% url 'accounts:UpdateUser' %}">
+            <div class="menu_lateral">
+              Conta
+            </div>
+          </a>
+          <a href="{% url 'checkout:order_list'%}">
+            <div class="menu_lateral">
+              Pedidos
+            </div>
+          </a>
+         
+          <a href="{%url 'accounts:UpdatePassword'%}">
+            <div class="menu_lateral">
+              Alterar Senha
+            </div>
+          </a>
+          <a href="{% url 'logout' %}">
+            <div class="menu_lateral">
+             Sair
+            </div>
+          </a>
+        </div>
+      </div>
+        {% block accounts_container %}
+            <div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+        <h3 class="info-acc roboto">Informações da conta</h3>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dados-acc">
+	        <p>Nome</p>
+	        <p>Telefone</p>
+	        <p>CPF</p>
+	        <p>E-mail</p>
+            <p>Logradouro</p>
+            <p>Numero</p>
+            <p>Complemento</p>
+            <p>Cidade</p>
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 dados-repost-acc">
+        	<p>{{user.name}}</p>
+        	<p>{{user.telefone}}</p>
+        	<p>{{user.cpf}}</p>
+            <p>{{user.email}}</p>
+        	<p>{{user.logradouro}}</p>
+        	<p>{{user.numero}}</p>
+            <p>{{user.complemento}}</p>
+            <p>{{user.cidade}}</p>
+            
+        </div>
+        <br>
+
+
+
+        <a href="{%url 'accounts:UpdateUser'%}" id="btn-mgr" class="btn btn-success btn-dashboard btn-left roboto">Editar informações</a>
+        
+      </div>
+      {% endblock %}
+    </section>
+
+
+{% endblock %}

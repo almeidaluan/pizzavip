@@ -1,0 +1,114 @@
+.cardapio{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 900;
+	color: #1088c4;
+	font-size: 40px;
+	text-shadow: -1px 3px 0px #da171d;
+}
+.border-cardapio{
+	border-top: solid 2px #2bab61;
+}
+.div-btn-cardapio{
+	text-align: center;
+	margin-top: 90px;
+}
+.btn-cardapio{
+	padding: 6px 12px;
+	border-radius:5px;
+	background: #ffffff;
+	border:solid 1px #2fc155;
+	color:#2fc155;
+	margin-right:10px;
+
+}
+
+/**** PÁGINA LOGIN/CADASTRO DE CLIENTE ******/
+body{
+		background-image: url('../img/backlogincadastro.png');
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+	
+}
+.pelicula{
+	background-repeat: repeat;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: #3e3e3e;
+}
+.login{
+	position: absolute;
+	top: 29%;
+	left: 50%;
+    transform: translateX(-50%);;
+}
+.logo_login{
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 30px;
+}
+.card_login{
+	padding: 40px;
+	border-radius: 10px;
+	width: 340px;
+	height: 374px;
+	background:rgba(40,43,48,.75);
+}
+.entrar{
+	font-size: 17px !important;
+}
+.cadastre-se{
+	margin-top: 20px;
+	text-align: center;
+	color: #ffffff;
+}
+.recuperar_senha{
+	color: #ffffff;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+/* Telefones em landscape e abaixo */
+@media (max-width: 320px) {
+	.login{
+		top: 16%;
+	}
+	.card_login{
+		width: 294px;
+	}
+}
+/*** Iphone 4 ***/
+@media (max-height: 480px) {
+	.login{
+		top: 12%;
+	}
+}
+/*** ***/
+@media (min-width: 321px) and (max-width: 480px) {
+	.login{
+		top: 21%;
+	}
+}
+/* Telefone em landscape a tablet em portrait */
+@media (max-height: 360px) {
+	.login{
+		top: 2%;
+	}
+	.card_login{
+		height: 346px;
+	}
+}
+/* tablet em portrait a landscape e desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+/* Desktop grande */
+@media (min-width: 1200px) {
+	.login{
+		top: 25%;
+	}
+}

@@ -1,0 +1,122 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pizza Vip - Cadastro</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import CSS -->
+		<link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/cardapio_login.css' %}" rel="stylesheet">
+		<link href="{%static 	'assets/css/cadastro.css' %}" rel="stylesheet">
+	  	<link rel="stylesheet" href="{%static 'assets/css/font-awesome.min.css'%}">
+	</head>
+
+	<body>
+		<div class="pelicula">
+		</div>
+
+		<div class="container">
+			<div class="login">
+				<div class="card_login">
+					<img class="logo_login" src="{% static 'assets/img/logo2.png' %}">
+
+					<form  method="post">
+
+
+						   {% csrf_token %}
+            				{% for error in form.non_field_errors.as_text %}
+            				<div class="alert alert-danger">
+               				 {{ error }}
+           						</div>
+           				 {% endfor %}
+
+							
+					<div class="col-md-6{% if form.errors %} has-error{% endif %}">
+						<div class="form-group">							
+							{% render_field form.username class="form-control" placeholder="Apelido" %}
+							<span class="help-block">{{ error }}</span>
+						</div>
+						<div class="form-group">							
+							{% render_field form.name class="form-control" placeholder="Nome" %}
+							<span class="help-block">{{ error }}</span>
+						</div>
+						<div class="form-group">							
+							{% render_field form.email class="form-control" placeholder="email" %}
+						</div>
+						<div class="form-group">							
+							{% render_field form.telefone class="form-control" placeholder="telefone" %}
+						</div>
+						<div class="form-group">							
+							{% render_field form.logradouro class="form-control" placeholder="logradouro" %}
+						</div>
+					</div>
+
+					<div class="col-md-6{% if form.errors %} has-error{% endif %}">
+						<div class="form-group">							
+							{% render_field form.numero class="form-control" placeholder="numero" %}
+						</div>
+						<div class="form-group">							
+							{% render_field form.complemento class="form-control" placeholder="complemento" %}
+						</div>
+						<div class="form-group">							
+							{% render_field form.cpf class="form-control" placeholder="cpf" %}
+						</div>
+						<div class="form-group">							
+							{% render_field form.cidade class="form-control" placeholder="cidade" %}
+						</div>
+						
+						<div class="form-group">							
+							{% render_field form.password1 class="form-control" placeholder="senha" %}
+						</div>
+						
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">							
+							{% render_field form.password2 class="form-control" placeholder="confirmar senha" %}
+						</div>
+					</div>
+					 
+
+
+
+
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-eu-quero open-sans entrar" style="width:97px;">
+						Registrar
+						</button>
+
+						
+
+					</div>
+
+	
+
+
+					
+					</form>
+					<p class="open-sans cadastre-se">Já tem uma conta? <a href="{% url 'login' %}"><span style="color: #2fc155"> Entrar</span></a></p>
+					
+				</div>
+				{% if form.errors %}
+  							<ul style=" padding-left: 0px; margin-top: 5px;">
+    						{% for key,value in form.errors.items %} 
+      							<li><span class="help-block" style="background-color: #f2dede; border-color: #ebccd1; color:#a94442; margin: 0 auto; display: block; text-align: center; padding-right: 50px; padding-left: 50px; padding-top: 0px; padding-bottom: 0px">
+		  						{{ key|escape }} : {{ value|escape }}
+		  							</span>
+							  </li>
+  								  {% endfor %}
+ 							 </ul>
+						{% endif %}
+			</div>
+		</div>
+
+		<!--  JS -->
+	  	<script src="js/jquery-1.11.3.min.js"></script>
+	  	<script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>

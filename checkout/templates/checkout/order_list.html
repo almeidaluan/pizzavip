@@ -1,0 +1,101 @@
+{% extends "accounts/basedashboard.html" %}
+
+{% load pagination %}
+
+
+{% block container%}
+
+
+<!-- Menu Lateral -->
+    <section class="container">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <span class="hi_user">Olá, <strong>{{user}}</strong></span>
+        <div class="div_menu">
+          <a href="{% url 'accounts:index' %}">
+            <div class="menu_lateral ativo">
+             Início
+            </div>
+          </a>
+          <a href="{% url 'accounts:UpdateUser' %}">
+            <div class="menu_lateral">
+              Conta
+            </div>
+          </a>
+          <a href="{% url 'checkout:order_list'%}">
+            <div class="menu_lateral">
+              Pedidos
+            </div>
+          </a>
+         
+          <a href="{%url 'accounts:UpdatePassword'%}">
+            <div class="menu_lateral">
+              Alterar Senha
+            </div>
+          </a>
+          <a href="{% url 'logout' %}">
+            <div class="menu_lateral">
+             Sair
+            </div>
+          </a>
+        </div>
+      </div>
+        {% block accounts_container %}
+            <div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+         <h3 class="info-acc roboto">Meus Pedidos</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Produtos
+            </th>
+            <th>
+                Situação
+            </th>
+            <th>
+                Data
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in object_list %}
+        <tr>
+            <td>
+                <a href="{%url 'checkout:order_detail' order.pk %}">#{{ order.pk }}</a>
+            </td>
+            <td>
+                {% for product in order.products %}
+                {{ product.name }}{% if not forloop.last %}<br />{% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {{ order.get_status_display }}
+            </td>
+            <td>
+                {{ order.created|date:"d/m/Y" }}
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+     
+</table>
+    {% pagination request paginator page_obj %}        
+     
+    
+
+      </div>
+    
+      {% endblock %}
+    </section>
+
+
+{% endblock %}
+        
+          
+
+
+
+

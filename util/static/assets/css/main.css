@@ -1,0 +1,469 @@
+/*IMPORT FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.roboto{
+  font-family: 'Roboto', sans-serif;
+}
+.open-sans{
+  font-family: 'Open Sans', sans-serif;
+}
+.ubuntu{
+  font-family: 'Ubuntu', sans-serif;
+}
+body{
+  background-color: #ffffff; /*#fafafa*/
+}
+.thumb-transp{
+  background-color: transparent;
+}
+
+
+.menu{
+  background-color: #ffffff;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  padding: 15px;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
+  font-weight: lighter;
+  margin-top: -18px;
+}
+.menu > a{
+  color: #000000;
+}
+.menu > a:hover,
+.menu > a:focus{
+  text-decoration: none;
+  color: #2bab61;
+}
+@media(max-width: 480px){
+  .menu{
+    width: 176px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  .menu > a{
+    font-size: 17px; 
+  }
+}
+@media(max-width: 768px){
+  .icons-sociais, 
+  .primeira-dobra,
+  .terceira-section,
+  .btn-instagram{
+    display: none;
+  }
+}
+@media(min-width: 767px) and (max-width: 1400px){
+  .img-instagram{
+    width: 320px !important;
+    height: 230px !important;
+  }
+  .terceira-section{
+    height: 230px !important;
+  }
+}
+.navbar-default .navbar-toggle{
+  margin-top: 17px;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+.menu2{
+margin-right: 25px; 
+margin-top: -38px; 
+color: #ffffff;
+font-weight: bolder;
+}
+.menu2 > span{
+  font-weight: 100;
+}
+/* Primeiro nav */
+.first-nav{
+  background-color: #2a9354; 
+}
+.first-nav  li{
+  height: 38px;
+}
+.margin-top-10px{
+  margin-top: 10px;
+}
+@media (min-width: 768px){
+.navbar >.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+}
+/* Segundo nav */
+.logo{
+  margin-top: -22px;
+}
+.navbar-default .navbar-brand{
+  color: #ffffff;
+}
+.margin-top-menos-8px{
+  margin-top: -8px;
+}
+.second-nav{
+  background-color: #2bab61 ;/*#181818*/
+  height: 70px;
+  margin-bottom: 55px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+.primeira-section{
+  margin-bottom: 70px;
+}
+/* Slides */
+.padding-slide1-2{
+  padding-right: 0px;
+}
+.padding-slide3{
+  padding-left: 5px;
+}
+
+.thumbnail {
+  margin-bottom: 0px;
+  border: none;
+}
+ .thumbnail img{
+  border-radius: 10px;
+}
+.icone-menu{
+  color: #ffffff;
+  font-size: 22px !important;
+  margin-top: 6px;
+  border-radius: 100px;
+  padding-left: 12px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 9px;  
+}
+.descricao{
+  width: 180px;
+  padding-left: 40px
+}
+.delivery{
+  width: 165px;
+  padding-left: 55px;
+}
+/*** BTN CADASTRO ***/
+.possui_conta{
+  padding-top: 4px;
+  height: 38px;
+}
+.possui_conta:hover{
+  color: #1da1f2;
+  text-decoration: underline;
+}
+.link-inscrever:link {
+  text-decoration: none;
+}
+.link-inscrever:visited {
+  text-decoration: none;
+}
+.link-inscrever:hover {
+  text-decoration: none;
+}
+.link-inscrever:active {
+  text-decoration: none;
+}
+.bnt-entrar-bg{
+  background-color: #288DCB;
+}
+.btn-inscrever-bg{
+  background-color: #637483;
+  border-color: #637483;
+  margin-bottom: 20px;
+}
+.btn-inscrever-bg:hover,
+.btn-inscrever-bg:focus {
+  background-color: #637483;
+  border-color: #637483;
+}
+.btn-inscrever-bg:active:hover,
+.btn-inscrever-bg.active:hover,
+.open > .dropdown-toggle.btn-inscrever-bg:hover,
+.btn-inscrever-bg:active:focus,
+.btn-inscrever-bg.active:focus,
+.open > .dropdown-toggle.btn-inscrever-bg:focus,
+.btn-inscrever-bg:active.focus,
+.btn-inscrever-bg.active.focus,
+.open > .dropdown-toggle.btn-inscrever-bg.focus {
+  color: #fff;
+  background-color: #53616B;
+  border-color: #53616B;
+}
+.hr-cadastro{
+  margin: 5px 0px;
+  color: #EFEEED;
+}
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {
+  background-color: transparent;
+  border-color: #337ab7;
+}
+.nav > li > a{
+  color: #ffffff;
+}
+.nav > li > a:hover, 
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+/* Pizzas e Bebidas */
+.hr-modificado{
+  margin: 5px;
+  border-radius: 100px;
+  height: 1px;
+  background: #e7e7e7;
+}
+.verde{
+  width: 13%;
+  margin: 5px;
+  border-radius: 100px;
+  height: 1px;
+  background: #2fc155;
+  margin-top: -7px;
+}
+.no-margin-bot{
+  margin-bottom: 0px;
+}
+.m-top{
+  margin-top: 60px;
+}
+.icon{
+  margin-bottom: -42px;
+  position: relative;
+}
+.icon-pizza{
+  margin-left: 10px;
+}
+.margin-title-bebida{
+  margin-left: 36px !important;
+}
+.p-pizzas, .p-bebidas{
+  position: relative;
+  margin-left: 50px;
+  font-size: 30px;
+  color: #666666;
+}
+#pizzas{
+  margin-bottom: 36px;
+}
+.pizzas-margin-top{
+  margin-top: 20px;
+}
+.hr-pizzas{
+  margin-top: 5px;
+}
+.nome-pizza, .nome-bebida{
+  color: #000000;
+  font-size: 25px;
+  text-align: center;
+}
+.desc-pizza{
+  color: #777777;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -10px;
+  font-weight: 300;
+}
+.preco{
+  font-weight: bolder;
+  color: #ff4d4d;
+  font-size: 18px;
+  text-align: center;
+}
+.btn-eu-quero{
+  font-weight: 600;
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  color: #2fc155;
+  display: block;
+  margin: auto;
+  width: 84px;
+  border-color: #2fc155;
+  font-size: 12px;
+}
+.btn-eu-quero:hover,
+.btn-eu-quero:focus{
+  background-color: #2fc155;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  border-color: #2fc155;
+}
+div#segunda-fileira > div > img {
+  margin-top: 50px;
+}
+.img-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+div#pizzas-bebidas > div#segunda-fileira > div > img{
+  margin-top: 35px;
+}*/
+div#pizzas-bebidas > div#primeira-fileira > div > img{
+  margin-top: 35px;
+}
+
+/*** SEGUNDA SECTION ***/
+.segunda-section{
+  background-color: #E23945;
+}
+.bg-parallax{
+  background-image: url('../img/parallax/parallax-1.png');
+    height: 350px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nossa_historia{
+  display: block;
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hist-rest{
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.img-restaurante{
+  width: 450px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+.title-hist{
+  color: #ffffff;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bolder;
+}
+.hist{
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter;
+}
+.borda{
+  background-image: url('../img/parallax/borda.png');
+  height: 9px;
+}
+/*** TERCEIRA SECTION ***/
+.terceira-section{
+  height: 324px;
+}
+.btn-instagram{
+  margin-top: 20px;
+  position: absolute;
+  z-index: 100;
+  background-color: #355582;
+  border: solid 1px #355582;
+  border-radius: 0px;
+  font-size: 20px;
+  color: #ffffff;
+}
+.btn-instagram:hover,
+.btn-instagram:focus{
+  color: #ffffff;
+}
+.img-instagram{
+  width: 320px;
+  height: 324px;
+}
+.grid-padding{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/**** QUARTA SECTION ****/
+.footer{
+  height: 70px;
+  background-color: #2bab61;
+}
+.copyright{
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: #eeeee1;
+  text-align: center;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px; 
+}
+.redes-sociais{
+  color: #fafae6;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -0.5px; 
+  font-weight: 500;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 13px;
+}
+@media(max-width: 640px){
+  .redes-sociais{
+    text-align: center;
+  }
+}
+.border-bot{
+  width: 96%;
+  border-bottom: 1px solid #eeeee1;
+  margin: 0 auto;
+  height: 1px;
+  padding-bottom: 24px;
+}
+.first-navT{
+  padding-bottom: 0px;
+  padding-top: 5px;
+}
+.icons-sociais{
+  padding-top: 4px;
+  height: 38px;
+}
+.icons-redes-sociais{
+  font-size: 17px !important;
+  padding-left: 10px;
+  padding-right: 5px;
+  color: #eeeee1;
+}
+.fa-facebook:hover{
+  color: #3b589e;
+  text-decoration: none;
+}
+.fa-twitter:hover{
+  color: #36b9ff;
+  text-decoration: none;
+}
+.fa-instagram:hover{
+  color: #355a87 !important;
+  text-decoration: none !important;
+}
+.fa-youtube:hover{
+  color: #ee1e1a;
+  text-decoration: none;
+}

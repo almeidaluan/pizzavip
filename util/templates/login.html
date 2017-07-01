@@ -1,0 +1,66 @@
+{% load widget_tweaks%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pizza Vip - Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Import CSS -->
+		<link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/css/main.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/css/cardapio_login.css'%}" rel="stylesheet">
+	  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css'%}">
+	</head>
+
+	<body>
+		<div class="pelicula">
+		</div>
+		<div class="container">
+			<div class="login">
+				<div class="card_login">
+					<img class="logo_login" src="{% static 'assets/img/logo2.png' %}">
+
+					<form method="post">
+
+						{% csrf_token %}
+
+						{% for error in form.non_field_errors %}
+						<div class="alert alert-danger">
+							{{error}}
+						</div>
+						{%endfor%}
+
+
+						<div class="form-group{% if form.username.errors%} has-error{% endif %}">
+							{% render_field form.username class="form-control" placeholder="Email" %}
+
+							{% for error in form.username.errors%}
+								<span class="help-block">{{error}}</span>
+							{%endfor%}
+					    </div>
+					    <div class="form-group{% if form.password.errors%} has-error{% endif %}">
+								{% render_field form.password class="form-control" placeholder="Senha" %}
+
+								{% for error in form.password.errors%}
+									<span class="help-block">{{error}}</span>
+								{%endfor%}
+					    </div>
+					    <a href="#"><p class="recuperar_senha"> Recuperar minha senha</p></a>
+
+					      <button type="submit" class="btn btn-eu-quero open-sans entrar">Enviar</button>
+
+
+					    <p class="open-sans cadastre-se">Novo por aqui? <a href="{% url 'accounts:registro2' %}"><span style="color: #2fc155"> Cadastre-se</span></a></p>
+					</form>
+
+				</div>
+			</div>
+		</div>
+
+		<!--  JS -->
+	  	<script src="js/jquery-1.11.3.min.js"></script>
+	  	<script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>

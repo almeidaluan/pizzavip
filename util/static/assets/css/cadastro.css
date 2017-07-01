@@ -1,0 +1,34 @@
+.card_login{
+	width: 525px !important;
+	height: 515px !important;
+	
+}
+@media (min-width: 1200px) and (max-width: 1900px){
+	.login {
+	    top: 20% !important;
+	}
+}
+@media(max-width: 640px ){
+	.card_login {
+    width: 320px !important;
+    height: 676px !important;
+    padding: 4px !important;
+	}	
+	.login{
+		top: 1%;
+		padding-bottom: 5px;
+	}
+	.logo_login{
+		margin-top: 10px;
+	}
+}
+@media(min-width: 645px) and (max-width: 768px){
+	.login { 
+	    top: 16%;
+	}
+}
+@media(min-width: 770px) and (max-width: 800px){
+	.card_login {
+    	height: 705px !important;
+	}
+}

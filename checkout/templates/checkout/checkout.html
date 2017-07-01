@@ -1,0 +1,39 @@
+{% extends 'accounts/index.html' %}
+
+{% block container %}
+
+<div class="page-header">
+    <h1 class="info-acc roboto" style="text-align: center;margin-top: 70px;border-bottom: none;">Forma de pagamento</h1>
+</div>
+<div class="row" style="width: 100%">
+    <div class="col-md-4 col-md-offset-2">
+       
+
+ <div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+        <h2>Pedido #{{order.pk}}</h2>
+        <dl class="dl-horizontal">
+            <dt style="font-size: 25px;">Total R$</dt>
+            <dd style="font-size: 25px;">{{order.total | floatformat:"2"}}</dd>
+            <dt style="font-size: 25px;">Situação</dt>
+            <dd style="font-size: 25px;">{{order.get_status_display}}</dd>
+            <dt style="font-size: 25px;">Data</dt>
+            <dd style="font-size: 25px;">{{order.created | date:"d/m/Y H:i" }}</dd>
+            <dt style="font-size: 25px;width: 230px;">Meio de Pagamento</dt>
+            <a href="{%url 'checkout:pagseguro_view' order.pk %}" class="btn btn-success" style="padding-left: 20px;">Pagar com PagSeguro</a>
+            <dd style="font-size: 25px;">{{order.get_payment_option_display}}</dd>
+            
+
+        </dl>
+      
+
+        </div>
+
+
+
+
+       
+        
+     
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'accounts/index.html' %}
+{% load widget_tweaks %}
+
+{%block title%}Alterar Dados{% endblock %}
+
+{% block accounts_container %}
+<div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+<h3 class="info-acc roboto">Alterar Dados</h3>
+<form class="form-horizontal" method="post">
+    {% csrf_token %}
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+        {{ error }}
+    </div>
+    {% endfor %}
+
+<!--
+    <fieldset>
+        {% for field in form %}
+        <div class="form-group{% if field.errors %} has-error{% endif %}">
+          <label for="{{ field.auto_id }}" class="col-md-3 control-label">{{ field.label }}</label>
+          <div class="col-md-9">
+            {% render_field field class="form-control" %}
+            {% for error in field.errors %}
+            <span class="help-block">{{ error }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+
+
+        {%render_field form.name placeholder="Nome"  %}
+
+        <div class="form-group">
+          <div class="col-md-9 col-md-offset-3">
+            <button type="submit" class="btn btn-primary">Alterar</button>
+          </div>
+        </div>
+        {% for message in messages%}
+          <div class="alert alert-{{message.tags}}">
+            {{message}}
+          </div>
+        {%endfor%}
+    </fieldset>-->
+
+
+
+
+<div class="menu_box_mgt col-lg-9 col-md-9 col-sm-9">
+        
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dados-acc">
+	        <p style="padding-top: 11px">Nome</p>
+	        <p style="padding-top: 19px">Email</p>
+	        <p style="padding-top: 19px">Complemento</p>
+	        <p style="padding-top: 22px">Numero</p>
+	        <p style="padding-top: 20px">Logradouro</p>
+          <p style="padding-top: 22px">Cidade</p>
+          <p style="padding-top: 20px">Telefone</p>
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 dados-repost-acc">
+          
+            <div class="form-group">
+              {%render_field form.name class="form-control" %}
+            </div>
+            <div class="form-group">
+              {%render_field form.email class="form-control" %}
+            </div>
+            <div class="form-group">
+              {%render_field form.complemento class="form-control"%}         
+            </div>
+            
+            <div class="form-group">
+            {%render_field form.numero class="form-control" %}
+            </div>
+             <div class="form-group">
+              {%render_field form.logradouro class="form-control"%}         
+            </div>
+             <div class="form-group">
+              {%render_field form.cidade class="form-control"%}         
+            </div>
+            
+             <div class="form-group">
+              {%render_field form.telefone class="form-control"%}         
+            </div>
+
+        </div>
+        
+        <button type="submit" class="btn btn-success btn-dashboard btn-right roboto">Alterar</button>
+        
+         {% for message in messages%}
+          <div class="alert alert-{{message.tags}}">
+            {{message}}
+          </div>
+        {%endfor%}
+      </div>
+
+
+
+
+
+</form>
+
+</div>
+
+{% endblock %}

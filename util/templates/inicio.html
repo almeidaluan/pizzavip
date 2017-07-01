@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+
+{% block container%}
+
+    <!-- Pizzas -->
+    <section class="primeira-section"> <!-- Primeira parte do site -->
+       <div class="container">
+         <div class="row">
+          <div class="padding-slide1-2 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+            <a href="{{get_absolute}}" class="thumbnail thumb-transp">
+              <img src="{% static 'assets/img/sliders/pizza1.png'%}" class="img-responsive" alt="...">
+            </a>
+
+            <a href="{{get_absolute}}" class="thumbnail thumb-transp">
+              <img src="{% static 'assets/img/sliders/pizza2.png'%}" class="img-slide2 img-responsive" alt="...">
+            </a>
+          </div>
+
+          <div class="padding-slide3 col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <a href="{{get_absolute}}" class="thumbnail thumb-transp">
+              <img src="{%static 'assets/img/sliders/pizza3.png'%}" class="img-slide3 img-responsive" alt="...">
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+  <div class="container m-top" id="pizzas-bebidas">
+    <img class="icon" src="{% static 'assets/img/icons/pizza.png' %}">
+    <p class="no-margin-bot p-pizzas">Pizzas</p>
+    <hr class="hr-modificado"><hr class="verde">
+      {% for pizza in pizzas%}
+    <div class="pizzas-margin-top" id="primeira-fileira"> <!-- 1ª fileira de pizzas -->
+      <div class="col-lg-3 col-md-6 " style="text-align:center;">
+        <img class="img-responsive img-center" src="{%static 'assets/img/pizzas/brigadeiro.png' %}">
+        <hr class="hr-pizzas">
+        <p class="nome-pizza roboto">{{pizza.name}}</p>
+        <p class="desc-pizza roboto" >{{pizza.description |linebreaks }}</p>
+        <p class="preco open-sans">R$ {{pizza.price}}</p>
+      <!--  <a href="#" class="btn btn-success btn-eu-quero open-sans">EU QUERO</a>-->
+      </div>
+    </div>
+
+      {% endfor %}
+
+
+
+
+<div class="container m-top" id="pizzas-bebidas">
+  <img class="icon icon-pizza" src="{% static 'assets/img/icons/bebida.png'%}">
+  <p class="no-margin-bot p-bebidas margin-title-bebida">Bebidas</p>
+  <hr class="hr-modificado"><hr class="verde">
+
+  {% for refrigerante in refrigerantes %}
+    <div id="primeira-fileira"> <!-- Primeira fileira -->
+      <div class="col-lg-3 col-md-6">
+        <img class="img-responsive img-center" src="{%static 'assets/img/bebidas/pepsi.png' %}">
+        <hr class="hr-pizzas">
+        <p class="nome-bebida roboto">{{refrigerante.name}}</p>
+        <p class="preco open-sans">R$ {{refrigerante.price}}</p>
+        <!--<a href="#" class="btn btn-success btn-eu-quero open-sans">EU QUERO</a>-->
+      </div>
+    </div>
+{% endfor%}
+
+</section>
+
+
+
+<section class="segunda-section"><!-- Inicio Segunda Section -->
+  <div class="bg-parallax">
+    <img class="nossa_historia img-responsive" src="{% static 'assets/img/parallax/nossa_historia.png'%}">
+  </div>
+
+  <div class="hist-rest container">
+    <div class="col-lg-6">
+      <img class="img-restaurante img-responsive img-center" src="{%static 'assets/img/parallax/restaurante.png'%}">
+    </div>
+    <div class="col-lg-6">
+      <p class="title-hist">2012 - Há 5 anos atrás</p>
+      <p class="hist">A história da Pizza Vip começa em 2012 no bairro Caioaba, Nova Iguaçu. Era nossa primeira loja. Um lugar bem simples, com apenas 5 funcionários. </p>
+      <p class="hist">Nossas massas e pizzas rapidamente se tornaram um sucesso e junto com o bom atendimento, foram as responsáveis pela nossa expansão.</p>
+      <p class="hist">Nossas massas e pizzas rapidamente se tornaram um sucesso e junto com o bom atendimento, foram as responsáveis pela nossa expansão.</p>
+    </div>
+  </div>
+</section><!-- Fim Segunda Section -->
+<a href="#" target="_blank" class="btn  btn-instagram open-sans"><i class="fa fa-instagram" aria-hidden="true"></i> PIZZAVIPDELIVERY</a>
+
+<section class="terceira-section">
+  <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/1.png' %}">
+  </div>
+      <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/2.png'%}">
+  </div>
+
+  <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/3.png'%}">
+  </div>
+
+  <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/4.png'%}">
+  </div>
+
+  <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/7.png'%}">
+  </div>
+  <div class="grid-padding col-lg-2 col-md-2 col-sm-2 col-xs-2">
+    <img class="img-responsive img-instagram" src="{%static 'assets/img/instagram/6.png'%}">
+  </div>
+</section>
+
+
+
+
+
+
+{% endblock%}
