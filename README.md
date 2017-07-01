@@ -6,6 +6,7 @@ Loja virtual - Projeto de didático
 # Clone o Projeto
 
 git clone https://github.com/almeidaluan/pizzavip.git
+
 cd ecommercedjango
 
 # virtualenv
