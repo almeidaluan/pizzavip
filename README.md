@@ -11,7 +11,6 @@ cd ecommercedjango
 
 # Windows
 
-env\Scripts\activate.bat
 Instale as dependencias
 
 pip install -r requirements.txt
